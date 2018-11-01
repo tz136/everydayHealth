@@ -1,0 +1,12 @@
+.header {
+  padding: 15px 0 15px 0;
+  background-color: #432C85;
+  font-size: 25px;
+  font-weight: 900;
+  color: aliceblue;
+}
+
+.localTime {
+  font-size: 20px;
+  font-weight: normal;
+}
