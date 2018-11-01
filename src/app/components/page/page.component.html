@@ -1,6 +1,16 @@
 <div class="container containerMain" align="center">
- <div class="box">
-    <img *ngIf="iconUrl" [src]="iconUrl">
-    <p>1</p>
- </div>
+
+  <div class="box">
+    <div style="height: 20%;background-color: blueviolet;border-top-left-radius: 5px;border-top-right-radius: 5px">
+      fdf
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <img *ngIf="iconUrl" [src]="iconUrl">
+      </div>
+      <div class="col-sm-6" style="padding-top: 12px">
+        <span>description:{{description}}</span>
+      </div>
+    </div>
+  </div>
 </div>

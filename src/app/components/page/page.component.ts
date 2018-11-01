@@ -11,6 +11,11 @@ export class PageComponent implements OnInit {
   latitude = null;
   longitude = null;
   iconUrl = null;
+  description = null;
+  temperature = null;
+  windSpeed = null;
+  humidity = null;
+
   constructor(private weather: WeatherService) { }
 
   ngOnInit() {
@@ -25,6 +30,7 @@ export class PageComponent implements OnInit {
         this.weather.getWeather(this.latitude, this.longitude).subscribe((res: any) => {
           console.log(res);
           this.getIcon(res.weather[0].icon);
+          this.getWeatherDetails(res);
         });
       })
     } else {
@@ -34,6 +40,13 @@ export class PageComponent implements OnInit {
   //get weather icon
   getIcon(icon) {
     this.iconUrl = this.weather.getIcon(icon);
+  }
+
+  getWeatherDetails(info: any) {
+    this.description = info.weather[0].description;
+    this.temperature = info.main.temp;
+    this.windSpeed = info.wind.speed;
+    this.humidity = info.main.humidity;
   }
 
 }

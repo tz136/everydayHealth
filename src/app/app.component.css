@@ -6,6 +6,7 @@
   left: 0;
   z-index: -99;
   opacity: 1;
-  background: linear-gradient(to bottom, #B290FF, #2E1D65);
+  background: linear-gradient(to bottom, #FC7DB8, #495CFC);
   transition: opacity 300ms linear;
 }
+
