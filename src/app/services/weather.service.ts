@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class WeatherService {
   //initial weather & icon api endpoint;
@@ -11,17 +11,26 @@ export class WeatherService {
 
   icon_api_endPoint = "http://openweathermap.org/img/w/";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   //get curent weather
   getWeather(lat, lon) {
-    let url = this.weather_api_endPoint + '?lat=' + lat + '&lon=' + lon + this.api_key;
+    let url =
+      this.weather_api_endPoint + "?lat=" + lat + "&lon=" + lon + this.api_key;
     return this.http.get(url);
-
   }
   //get weather icon
   getIcon(icon) {
-    let url = this.icon_api_endPoint + icon + '.png';
+    let url = this.icon_api_endPoint + icon + ".png";
     return url;
+  }
+
+  getIpAddress() {
+    return this.http.get("https://jsonip.com/");
+  }
+
+  getLocation(ip) {
+    let url = "https://ipapi.co/" + ip + "/json/";
+    return this.http.get(url);
   }
 }

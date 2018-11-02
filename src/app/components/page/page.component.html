@@ -1,15 +1,17 @@
 <div class="container containerMain" align="center">
-
   <div class="box">
-    <div style="height: 20%;background-color: blueviolet;border-top-left-radius: 5px;border-top-right-radius: 5px">
-      fdf
+    <div class="boxHeader">
+      <p class="headerText">Your Location Weather</p>
     </div>
     <div class="row">
       <div class="col-sm-6">
-        <img *ngIf="iconUrl" [src]="iconUrl">
+        <img *ngIf="iconUrl" [src]="iconUrl" style="width:150px;height:150px;padding-top:20px">
       </div>
-      <div class="col-sm-6" style="padding-top: 12px">
-        <span>description:{{description}}</span>
+      <div class="col-sm-6" style="padding-top:12px">
+        <p>description:{{description}}</p>
+        <p>temperature:{{temperature}}</p>
+        <p>windSpeed:{{windSpeed}}</p>
+        <p>humidity:{{humidity}}</p>
       </div>
     </div>
   </div>
