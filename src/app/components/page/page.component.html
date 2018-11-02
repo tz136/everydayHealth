@@ -1,17 +1,21 @@
 <div class="container containerMain" align="center">
   <div class="box">
     <div class="boxHeader">
-      <p class="headerText">Your Location Weather</p>
+      <p class="headerText">Weather of Your Location </p>
     </div>
     <div class="row">
       <div class="col-sm-6">
-        <img *ngIf="iconUrl" [src]="iconUrl" style="width:150px;height:150px;padding-top:20px">
+        <div class="detailBox">
+          <img *ngIf="iconUrl" [src]="iconUrl" style="width:150px;height:169px;padding-top:20px">
+        </div>
       </div>
-      <div class="col-sm-6" style="padding-top:12px">
-        <p>description:{{description}}</p>
-        <p>temperature:{{temperature}}</p>
-        <p>windSpeed:{{windSpeed}}</p>
-        <p>humidity:{{humidity}}</p>
+      <div class="col-sm-6">
+        <div class="detailBox">
+          <p><span class="detailText">Description:</span>{{description}}</p>
+          <p><span class="detailText">Temperature:</span>{{temperature}}</p>
+          <p><span class="detailText">WindSpeed:</span>{{windSpeed}}</p>
+          <p><span class="detailText">Humidity:</span>{{humidity}}</p>
+        </div>
       </div>
     </div>
   </div>

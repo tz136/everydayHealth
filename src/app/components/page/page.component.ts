@@ -7,6 +7,7 @@ import { WeatherService } from "../../services/weather.service";
   styleUrls: ["./page.component.css"]
 })
 export class PageComponent implements OnInit {
+
   latitude = null;
   longitude = null;
   iconUrl = null;
@@ -15,11 +16,14 @@ export class PageComponent implements OnInit {
   windSpeed = null;
   humidity = null;
 
-  constructor(private weather: WeatherService) {}
+  constructor(private weather: WeatherService) {
+    this.getCurrentLocation(); 
+  }
 
   ngOnInit() {
-    this.getCurrentLocation(); /* sometimes this funtion dosen't work, so I have another solution to get location*/
+    
   }
+  /* sometimes this funtion dosen't work, so I have another solution to get location*/
   //get user current location
   // getCurrentLocation() {
   //   var ip = window.location.origin;
@@ -61,6 +65,7 @@ export class PageComponent implements OnInit {
   }
 
   getWeatherDetails(info: any) {
+    console.log(info);
     this.description = info.weather[0].description;
     this.temperature = info.main.temp;
     this.windSpeed = info.wind.speed;
