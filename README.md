@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-##Install App
+## Install App
 Clone repo to you local, and cd to project folder, and run `npm install`
 
 ## Development server
